@@ -1,0 +1,35 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import "~quill/dist/quill.snow.css";
+@import "~quill/dist/quill.bubble.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import "ngx-toastr/toastr";
+
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: open_sansregular, sans-serif, Tahoma, Geneva;
+	background-color: #e8e5e5;
+}
+
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// .mat-mdc-dialog-container .mdc-dialog__surface {
+// 	background-color: transparent !important;
+// 	box-shadow: none !important;
+// }
+h2{
+  margin-top: 10px;
+  border-left: 5px solid #F2AF3C;
+  padding-left: 15px;
+}

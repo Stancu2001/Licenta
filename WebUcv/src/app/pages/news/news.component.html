@@ -1,0 +1,23 @@
+<button *ngIf="auth.isLoggedIn()"
+  class="ms-1 px-1 py-0 rounded-0 btn btn-danger" (click)="add()">
+  <i class="bi bi-plus-circle"></i>
+</button>
+
+<mat-accordion>
+  <ng-container *ngFor="let data of news">
+    <mat-expansion-panel (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{data.title}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{data.date|date:"dd/MM/yyyy HH:mm:ss"}}
+          <mat-icon *ngIf="auth.isLoggedIn()" (click)="delete(data.id)">delete</mat-icon>
+          <mat-icon *ngIf="auth.isLoggedIn()" (click)="edit(data)">edit</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <quill-view-html [content]="data.content"></quill-view-html>
+    </mat-expansion-panel>
+  </ng-container>
+</mat-accordion>

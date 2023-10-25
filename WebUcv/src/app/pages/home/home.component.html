@@ -1,0 +1,16 @@
+<!-- <div >
+  <base-editor [(ngModel)]="content">{{content}}</base-editor>
+  <button (click)="addContent()">apasa aici</button>
+</div> -->
+<div>
+  <div>
+    <button *ngIf="auth.isLoggedIn()" class="ms-1 px-1 py-0 rounded-0 btn btn-danger" (click)="open()">
+      <i class="bi bi-pencil-square"></i>
+    </button>  
+  </div>
+  <ng-container >
+    <h2>{{title}}</h2>
+    <quill-view-html [content]="content"></quill-view-html>
+  </ng-container>
+</div>
+

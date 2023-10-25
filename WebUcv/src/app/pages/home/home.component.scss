@@ -1,0 +1,13 @@
+a {
+  text-decoration: none; // Elimină sublinierea pentru link-uri normale
+  
+  &:hover {
+    text-decoration: none; // Elimină sublinierea pentru link-uri la survol
+    color: black;
+  }
+}
+h2{
+  margin-top: 10px;
+  border-left: 5px solid #F2AF3C;
+  padding-left: 15px;
+}

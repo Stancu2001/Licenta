@@ -1,0 +1,13 @@
+
+<div class="navbar-minimal navbar-expand-lg mb-2">
+  <div class="d-flex aling-items-center">
+    <ng-container *ngFor="let data of datas">
+      <navar-dropdown [title]="data.title" [options]="data.subcategories"
+        [id]="data.id" [link]="data.link" *ngIf="data.admin===false||(auth.isLoggedIn() && data.admin===true)||!data.admin"></navar-dropdown>
+    </ng-container>
+    <button *ngIf="auth.isLoggedIn()" class="ms-1 px-1 py-0 rounded-0 btn btn-danger"
+      (click)="AddCategory()">
+      <i class="bi bi-plus-lg"></i>
+    </button>
+  </div>
+</div>

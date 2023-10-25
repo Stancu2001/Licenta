@@ -1,0 +1,74 @@
+<form>
+  <div class="form-group">
+    <div class="card">
+      <div class="card-body">
+        <input type="file" multiple (change)="onFileChange($event)">
+      </div>
+    </div>
+  </div>
+</form>
+  <div class="pt-2">
+    <button class=" btn btn-success" (click)="uploadFile()" background-color="green">Submit</button>
+</div>
+<p></p>
+<p></p>
+<div>
+  <p>
+
+  </p>
+</div>
+<div *ngIf="fileData.length>0" id="view">
+  <table>
+      <tr *ngFor="let file of fileData| paginate: { itemsPerPage: 5, currentPage: page1, id:'1' }">
+        <td> <span style="color: red;"> Fisierul</span> {{ file.filName }} <span style="color: red;">are URL </span> <a href="{{ file.filUrl }}" target="_blank">{{ file.filUrl }}</a></td>
+      </tr>
+  </table>
+  <pagination-controls (pageChange)="pagechange1($event)" id="1"></pagination-controls>
+</div>
+<!-- <div *ngIf="fileData.length>0">
+  <p>{{fileData.length}}</p>
+  <div *ngFor="let file of fileData">
+    <span style="color: red;"> Fisierul</span> {{ file.filName }} <span style="color: red;">are URL </span> <a href="{{ file.filUrl }}" target="_blank">{{file.filUrl}}</a>
+  </div>
+</div> -->
+<!-- <div *ngIf="fileData.length>0" class="history">
+  <table>
+      <tr>
+        <th>Nume</th>
+        <th>Link</th>
+        <th>Vizualizare</th>
+        
+      </tr>
+      <tr *ngFor="let file of fileData| paginate: { itemsPerPage: 2, currentPage: page, id:'2' }">
+        <td>{{file.filName}}</td>
+        <td>{{file.filUrl}}</td>
+        <td><a href="{{file.filUrl}}" target="_blank">click</a></td>
+      </tr>
+  </table>
+  <pagination-controls (pageChange)="pagechange($event)" id="2"></pagination-controls>
+</div> -->
+
+
+<div *ngIf="allfile.length>0">
+  <div class="history">
+    <table class="history">
+      <tr>
+        <th>Nume</th>
+        <th>Link</th>
+        <th>Vizualizare</th>
+      </tr>
+      <tr *ngFor="let item of allfile| paginate: { itemsPerPage: 10, currentPage: page2, id:'3' }">
+        <td>{{ item.fileName }}</td>
+        <td>{{ item.originalFileName }}</td>
+        <td><a [href]="'http://localhost:8080/uploads/files/' + item.fileName" target="_blank">click</a></td>
+        <!-- Alte celule din tabel -->
+      </tr>
+    </table>
+    <pagination-controls (pageChange)="pagechange2($event)" id="3"></pagination-controls>
+  </div>
+</div>
+<!-- <button (click)="getallfile()">Vezi toate fisierele</button> -->
+<button class=" btn btn-danger" (click)="getallfile()" >Vezi toate fisierele</button>
+<!-- <div class="card">
+  <p-editor [style]="{height: '320px;'}"></p-editor>
+</div> -->

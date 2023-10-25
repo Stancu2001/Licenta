@@ -1,0 +1,18 @@
+<div class="px-4 py-2">
+  <div class="submit-form">
+    <div class="form-group">
+      <div class="pt-2"> 
+        <label >Adauga subcategorie</label>
+        <input class="form-control" [(ngModel)]="data.title"/>
+      </div>
+      <div class="pt-2">
+        <base-editor [(ngModel)]="data.content"></base-editor>
+      </div>
+    </div>
+    <div class="pt-2">
+      <button type="button" class="btn btn-success" (click)="onSubmit()">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

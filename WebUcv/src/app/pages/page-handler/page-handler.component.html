@@ -1,0 +1,12 @@
+<button *ngIf="auth.isLoggedIn()" class="ms-1 px-1 py-0 rounded-0 btn btn-danger" (click)="updateSubcategory()" target="_blank">
+  <i class="bi bi-pencil-square" ></i>
+</button>
+<button *ngIf="auth.isLoggedIn()" class="ms-1 px-1 py-0 rounded-0 btn btn-danger" (click)="deleteSubcategory()" target="_blank">
+  <i class="bi bi-trash3"></i>
+</button>
+<h2>{{data.title}}</h2>
+<quill-view-html [content]="data.content"></quill-view-html>
+
+<!-- <button class="ms-1 px-1 py-0 rounded-0 btn btn-danger" (click)="update()">
+  <i class="bi bi-pencil-square"></i>
+</button> -->

@@ -1,0 +1,13 @@
+<div class="navbar">
+  <div class="container">
+    <div class="title d-block align-items-center">
+      <!-- <span class="text-white d-block lh-0 h5 m-0">{{ titlePrimary }}</span> -->
+      <a style="text-decoration: none;" class="text-white d-block lh-0 h6 m-0" routerLink="">{{ titlePrimary }}</a>
+      <!-- <span class="text-white d-block lh-0 h6 m-0">{{ titleSecondary }}</span> -->
+      <a style="text-decoration: none;" class="text-white d-block lh-0 h6 m-0" routerLink="">{{ titleSecondary }}</a>
+    </div>
+  </div>
+
+  <button *ngIf="auth.isLoggedIn()==false" (click)="login()">Login</button>
+  <button *ngIf="auth.isLoggedIn()"(click)="logout()">Logout</button>
+</div>

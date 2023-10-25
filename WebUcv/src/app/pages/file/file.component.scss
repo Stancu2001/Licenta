@@ -1,0 +1,20 @@
+#view table th, #view table td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+.history table {
+border-collapse: collapse;
+border: 1px solid black;
+overflow-x: auto;
+}
+
+.history table th, td {
+border: 1px solid black;
+padding: 8px;
+text-align: center;
+}
+.table{
+width: unset;
+
+}
